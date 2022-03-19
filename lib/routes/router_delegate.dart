@@ -8,12 +8,14 @@ import '../pages/home_page.dart';
 
 class AppRouterDelegate extends RouterDelegate<Uri>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<Uri> {
+  @override
   final GlobalKey<NavigatorState> navigatorKey;
 
   Uri _path = Uri.parse('/');
 
   AppRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>();
 
+  @override
   Uri get currentConfiguration => _path;
 
   @override
@@ -44,32 +46,33 @@ class AppRouterDelegate extends RouterDelegate<Uri>
       go(configuration.toString());
 
   go(String path) {
-    this._path = Uri.parse(path);
+    _path = Uri.parse(path);
     _safeNotifyListeners();
   }
 
   List<Page> _getRoutes(Uri path) {
     final pages = [
-      MaterialPage(child: HomePage(), key: const ValueKey('home')),
+      const MaterialPage(child: HomePage(), key: ValueKey('home')),
     ];
-    if (path.pathSegments.length == 0) {
+    if (path.pathSegments.isEmpty) {
       return pages;
     }
     switch (path.pathSegments[0]) {
       case 'about':
-        pages.add(MaterialPage(
-          key: const ValueKey('about'),
+        pages.add(const MaterialPage(
+          key: ValueKey('about'),
           child: AboutPage(),
         ));
         break;
       case 'courses':
-        pages.add(MaterialPage(
-          key: const ValueKey('courses'),
+        pages.add(const MaterialPage(
+          key: ValueKey('courses'),
           child: CoursesPage(),
         ));
         break;
       default:
-        pages.add(MaterialPage(child: Error404Page(), key: const ValueKey('error')));
+        pages.add(
+            MaterialPage(child: Error404Page(), key: const ValueKey('error')));
         break;
     }
     if (path.pathSegments.length == 2) {
@@ -78,13 +81,13 @@ class AppRouterDelegate extends RouterDelegate<Uri>
           MaterialPage(
             key: ValueKey('course.${path.pathSegments[1]}'),
             child: CourseDetailsPage(
-              courseId: 
-                path.pathSegments[1],
+              courseId: path.pathSegments[1],
             ),
           ),
         );
       } else {
-        pages.add(MaterialPage(child: Error404Page(), key: const ValueKey('error')));
+        pages.add(
+            MaterialPage(child: Error404Page(), key: const ValueKey('error')));
       }
     }
     return pages;
