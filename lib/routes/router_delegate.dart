@@ -72,7 +72,7 @@ class AppRouterDelegate extends RouterDelegate<Uri>
         break;
       default:
         pages.add(
-            MaterialPage(child: Error404Page(), key: const ValueKey('error')));
+            const MaterialPage(child: Error404Page(), key: ValueKey('error')));
         break;
     }
     if (path.pathSegments.length == 2) {
@@ -87,7 +87,7 @@ class AppRouterDelegate extends RouterDelegate<Uri>
         );
       } else {
         pages.add(
-            MaterialPage(child: Error404Page(), key: const ValueKey('error')));
+            const MaterialPage(child: Error404Page(), key: ValueKey('error')));
       }
     }
     return pages;

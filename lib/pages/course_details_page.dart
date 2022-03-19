@@ -8,7 +8,7 @@ class CourseDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('title'),
+        title: const Text('title'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
