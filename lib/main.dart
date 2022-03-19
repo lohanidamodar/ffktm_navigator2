@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       ),
       routerDelegate: routerDelegate,
       routeInformationParser: _routeParser,
-      
     );
   }
 }

@@ -6,5 +6,6 @@ class AppRouteInformationParser extends RouteInformationParser<Uri> {
       Uri.parse(routeInformation.location!);
 
   @override
-  RouteInformation restoreRouteInformation(Uri configuration) => RouteInformation(location: configuration.toString());
+  RouteInformation restoreRouteInformation(Uri configuration) =>
+      RouteInformation(location: configuration.toString());
 }

@@ -13,43 +13,43 @@ class TopNav extends StatelessWidget {
       elevation: kIsWeb ? 0 : null,
       centerTitle: kIsWeb ? false : null,
       actions: [
-              TextButton(
-                child: const Text("Home"),
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                ),
-                onPressed: () {
-                  routerDelegate.go('/');
-                },
-              ),
-              TextButton(
-                child: const Text("Courses"),
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                ),
-                onPressed: () {
-                  routerDelegate.go('/courses');
-                },
-              ),
-              TextButton(
-                child: const Text("About"),
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                ),
-                onPressed: () {
-                  routerDelegate.go('/about');
-                },
-              ),
-              TextButton(
-                child: const Text("Contact"),
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                ),
-                onPressed: () {
-                  routerDelegate.go('/contact');
-                },
-              ),
-            ],
+        TextButton(
+          child: const Text("Home"),
+          style: TextButton.styleFrom(
+            primary: Colors.white,
+          ),
+          onPressed: () {
+            routerDelegate.go('/');
+          },
+        ),
+        TextButton(
+          child: const Text("Courses"),
+          style: TextButton.styleFrom(
+            primary: Colors.white,
+          ),
+          onPressed: () {
+            routerDelegate.go('/courses');
+          },
+        ),
+        TextButton(
+          child: const Text("About"),
+          style: TextButton.styleFrom(
+            primary: Colors.white,
+          ),
+          onPressed: () {
+            routerDelegate.go('/about');
+          },
+        ),
+        TextButton(
+          child: const Text("Contact"),
+          style: TextButton.styleFrom(
+            primary: Colors.white,
+          ),
+          onPressed: () {
+            routerDelegate.go('/contact');
+          },
+        ),
+      ],
     );
   }
 }
